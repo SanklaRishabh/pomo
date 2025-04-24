@@ -2,6 +2,8 @@
 
 # Create a help string.
 USAGE="Usage: pomo [work|break|<TIME>]"
+DIR_PATH="$(dirname $0)"
+TIMER="${DIR_PATH}/timer.sh"
 
 # Validate parameters.
 if [ -z "$1" ]; then
@@ -14,9 +16,9 @@ OS_NAME="$(uname)"
 
 # Select interpreter to handle execution.
 if [ "$OS_NAME" = "Darwin" ]; then
-  /bin/zsh timer.sh "$1"
+  /bin/zsh "$TIMER" "$1"
 elif [ "$OS_NAME" = "Linux" ]; then
-  /bin/bash timer.sh "$1"
+  /bin/bash "$TIMER" "$1"
 else
   echo "Unsupported OS."
 fi
