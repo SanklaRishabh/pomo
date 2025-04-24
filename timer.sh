@@ -57,7 +57,7 @@ pomodoro() {
     "work")
       work_timer "$DEFAULT_WORK_PERIOD"
       ;;
-    "break")
+    "chill")
       break_timer "$DEFAULT_BREAK_PERIOD"
       ;;
     *)
